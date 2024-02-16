@@ -6,15 +6,16 @@ var modal = document.getElementById("modal")
 function openModal() {
     modal.classList.remove("scale-0")
     modal.classList.add("scale-1")
+    openButton.style.display = "none"
     header.style.display = "none"
-    button.style.display = "none"
+    openButton.style.display = "none"
 }
 
 function closeModal() {
-    modal.classList.add("scale-0")
     modal.classList.remove("scale-1")
+    modal.classList.add("scale-0")
     header.style.display = "block"
-    button.style.display = "block"
+    openButton.style.display = "flex"
 }
 
 openButton.addEventListener("click", openModal)
