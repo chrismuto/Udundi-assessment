@@ -6,19 +6,40 @@
         <title>Explore</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.cdnfonts.com/css/bodoni" rel="stylesheet">
+        <style>
+            @keyframes slideIn {
+              0% {
+                transform: translateX(-100%);
+                opacity: 0;
+              }
+              100% {
+                transform: translateX(0);
+                opacity: 1;
+              }
+            }
+            .slide-in {
+              animation: slideIn 1s ease-out forwards;
+            }
+            .title-text {
+                font-size: 3rem;
+                @media screen and (min-width: 640px) {
+                    font-size: 11rem;
+                }
+            }
+        </style>
     </head>
     <body style="font-family: 'bodoni'">
-        <div class="bg-cover" style="background-image: url(assets/Coding-Challenge-Image.png)">
-            <h1 class="text-white h-2/12 tracking-wide fixed bottom-0 ml-40 mb-40" style="font-size: 11rem" id="header">
+        <div class="bg-cover flex md:items-center" style="background-image: url(assets/Coding-Challenge-Image.png)">
+            <h1 class="text-white h-2/12 tracking-wide title-text fixed bottom-0 ml-8 md:ml-20 lg:ml-40 mb-52 md:mb-40 slide-in" id="header">
                 Explore
             </h1>
-            <button class="text-white font-thin text-lg w-auto fixed bottom-0 ml-44 mb-44 pb-2 flex flex-row content-center" id="openModalButton">
+            <button class="text-white font-thin text-lg w-auto fixed bottom-0 ml-8 md:ml-24 lg:ml-44 mb-44 md:mb-44 pb-2 flex flex-row content-center" id="openModalButton">
                 <img  src="assets/Plus.svg" class="w-6">
                 <span class="ml-3 font-sans font-normal">
                     More Details
                 </span>
             </button>
-            <div class="absolute ml-40 my-24 md:my-32 w-72 md:w-96 bg-white scale-0 origin-bottom-left transition duration-300 ease-in-out" id="modal">
+            <div class="fixed mx-0 md:ml-40 mt-auto md:w-80 bg-white scale-0 origin-bottom-left transition duration-300 ease-in-out" id="modal">
                 <div class="m-6 flex flex-col">
                     <button class="text-red-900 w-6 m-3 absolute right-0 top-0" id="closeModalButton">X</button>
                     <div>
@@ -37,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="bg-red-900 h-screen w-80">        
+            <div class="bg-red-900 h-screen w-0 md:w-64 lg:w-80">        
             </div>
             <div class="flex flex-col w-16 my-8 mx-4 fixed bottom-px right-px">
                 <img src="assets/Facebook.svg" class="m-2">
